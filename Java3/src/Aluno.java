@@ -1,4 +1,4 @@
-public class Aluno {
+class Aluno {
     // Atributos
     private String nome;
     private int matricula;
@@ -6,9 +6,8 @@ public class Aluno {
     private double notaProva2;
     private double notaTrabalho;
 
-// Construtor
-
-public Aluno(int matricula, String nome, double notaProva1, double notaProva2, double notaTrabalho) {
+    // Construtor
+    public Aluno(int matricula, String nome, double notaProva1, double notaProva2, double notaTrabalho) {
         this.nome = nome;
         this.matricula = matricula;
         this.notaProva1 = notaProva1;
@@ -57,13 +56,12 @@ public Aluno(int matricula, String nome, double notaProva1, double notaProva2, d
     }
 
     // Método para calcular a nota total
-    public void notaTotal() {
-        double nota = notaProva1 + notaProva2 + notaTrabalho;
+    public double notaTotal() {
+        return (notaProva1 + notaProva2) * 0.3 + notaTrabalho * 0.4;
     }
-    public void isAprovado() {
 
+    // Método para verificar se o aluno foi aprovado
+    public boolean isAprovado() {
+        return notaTotal() >= 6.0;
     }
 }
-
-
-
